@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celie Tea — Hormonal Balance Tea | African Botanicals</title>
+    <meta name="description" content="Celie Tea Hormonal Balance Tea — Rich, Robust, Satisfying and Healing. Proudly African. Order yours today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-green:  #1C3B1C;
+            --mid-green:   #3D6B35;
+            --light-green: #5A8C3A;
+            --gold:        #C8A84B;
+            --gold-light:  #D8BC70;
+            --cream:       #F2E8D0;
+            --cream-light: #FAF6EE;
+            --brown-dark:  #2C1A0E;
+            --off-white:   #FAFAF5;
+            --text-dark:   #1A1A1A;
+            --text-mid:    #555;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Lato', sans-serif;
+            background: var(--cream-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* ── NAV ─────────────────────────────────────── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+            padding: 1.2rem 2.5rem;
+            display: flex; justify-content: space-between; align-items: center;
+            transition: background .4s, box-shadow .4s;
+        }
+        nav.scrolled {
+            background: var(--deep-green);
+            box-shadow: 0 2px 24px rgba(0,0,0,.35);
+        }
+        .nav-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem; font-weight: 600; letter-spacing: .06em;
+            color: var(--off-white); text-decoration: none;
+        }
+        .nav-brand em { color: var(--gold); font-style: normal; }
+        .nav-order {
+            padding: .55rem 1.5rem;
+            background: var(--gold); color: var(--deep-green);
+            font-size: .76rem; font-weight: 700; letter-spacing: .13em;
+            text-transform: uppercase; text-decoration: none;
+            transition: background .25s;
+        }
+        .nav-order:hover { background: var(--gold-light); }
+
+        /* ── HERO ────────────────────────────────────── */
+        .hero {
+            min-height: 100vh;
+            background: var(--deep-green);
+            display: flex; align-items: center;
+            padding: 7rem 2.5rem 11rem;
+            position: relative; overflow: hidden;
+        }
+        .hero::before, .hero::after {
+            content: ''; position: absolute; border-radius: 50%;
+            filter: blur(90px); pointer-events: none;
+        }
+        .hero::before {
+            width: 520px; height: 520px;
+            background: rgba(90,140,58,.13);
+            top: -120px; left: -160px;
+        }
+        .hero::after {
+            width: 420px; height: 420px;
+            background: rgba(200,168,75,.08);
+            bottom: -100px; right: 4%;
+        }
+
+        /* Botanical SVG bg — the signature element */
+        .hero-botanical {
+            position: absolute; inset: 0; pointer-events: none; opacity: .065;
+        }
+
+        .hero-inner {
+            max-width: 1100px; margin: 0 auto; width: 100%;
+            display: grid; grid-template-columns: 1fr auto;
+            gap: 4rem; align-items: center;
+            position: relative; z-index: 2;
+        }
+
+        .eyebrow {
+            font-size: .7rem; font-weight: 700; letter-spacing: .28em;
+            text-transform: uppercase; color: var(--gold);
+            display: flex; align-items: center; gap: .75rem; margin-bottom: 1.4rem;
+        }
+        .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+        .eyebrow.center { justify-content: center; }
+        .eyebrow.center::before { display: none; }
+        .eyebrow.green { color: var(--mid-green); }
+        .eyebrow.green::before { background: var(--mid-green); }
+
+        .hero-text h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.8rem, 5.5vw, 5rem);
+            font-weight: 300; color: var(--off-white);
+            line-height: 1.07; margin-bottom: 1.5rem;
+        }
+        .hero-text h1 strong {
+            display: block; font-weight: 600; font-style: italic;
+            color: var(--gold);
+        }
+        .hero-desc {
+            font-size: .97rem; line-height: 1.85;
+            color: rgba(255,255,255,.64); max-width: 440px; margin-bottom: 2.5rem;
+        }
+        .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-gold {
+            padding: .9rem 2.2rem;
+            background: var(--gold); color: var(--deep-green);
+            font-size: .8rem; font-weight: 700; letter-spacing: .12em;
+            text-transform: uppercase; text-decoration: none;
+            display: inline-block; transition: background .25s, transform .25s;
+        }
+        .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+        .btn-outline {
+            padding: .9rem 2.2rem;
+            border: 1px solid rgba(255,255,255,.32); color: var(--off-white);
+            font-size: .8rem; font-weight: 400; letter-spacing: .12em;
+            text-transform: uppercase; text-decoration: none;
+            display: inline-block; transition: background .25s;
+        }
+        .btn-outline:hover { background: rgba(255,255,255,.08); }
+
+        /* Product box CSS illustration */
+        .product-wrap { position: relative; flex-shrink: 0; }
+        .product-glow {
+            position: absolute; inset: -50px;
+            background: radial-gradient(circle, rgba(200,168,75,.22) 0%, transparent 70%);
+            animation: breathe 3.5s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%,100% { transform: scale(1); opacity: .6; }
+            50%      { transform: scale(1.12); opacity: 1; }
+        }
+        .product-box {
+            width: 210px;
+            background: linear-gradient(170deg, #C8A84B 0%, #A0812E 20%, #6B5018 50%, #3A2D0E 100%);
+            border-radius: 6px;
+            box-shadow: 0 24px 64px rgba(0,0,0,.55), 0 0 0 1px rgba(200,168,75,.3);
+            padding: 1.8rem 1.5rem 1.6rem;
+            display: flex; flex-direction: column; align-items: center;
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .product-box::before {
+            content: ''; position: absolute; inset: 0;
+            background-image: repeating-linear-gradient(
+                45deg, transparent, transparent 18px,
+                rgba(255,255,255,.03) 18px, rgba(255,255,255,.03) 19px
+            );
+        }
+        .steam-row { display: flex; gap: 6px; justify-content: center; margin-bottom: .6rem; }
+        .steam {
+            width: 3px; height: 26px;
+            background: linear-gradient(to top, rgba(255,255,255,.35), transparent);
+            border-radius: 3px;
+            animation: steamRise 2.2s ease-in-out infinite;
+        }
+        .steam:nth-child(2) { animation-delay: .35s; }
+        .steam:nth-child(3) { animation-delay: .7s; }
+        @keyframes steamRise {
+            0%   { transform: translateY(0) scaleY(.6); opacity: 0; }
+            40%  { opacity: .75; }
+            100% { transform: translateY(-22px) scaleY(1.3); opacity: 0; }
+        }
+        .pb-circle {
+            width: 64px; height: 64px; border-radius: 50%;
+            background: var(--deep-green); border: 2px solid var(--gold);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.3rem; position: relative;
+        }
+        .pb-circle span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: .58rem; font-weight: 600; color: var(--gold);
+            line-height: 1.3; letter-spacing: .04em;
+        }
+        .pb-sub {
+            font-size: .46rem; letter-spacing: .18em; text-transform: uppercase;
+            color: rgba(200,168,75,.8); margin-bottom: .85rem; position: relative;
+        }
+        .pb-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem; font-weight: 600; color: var(--off-white);
+            line-height: 1.1; margin-bottom: .2rem; position: relative;
+        }
+        .pb-name em {
+            display: block; font-weight: 300; font-style: italic;
+            font-size: .95rem; color: rgba(255,255,255,.85);
+        }
+        .pb-tagline {
+            font-size: .5rem; color: rgba(255,255,255,.58);
+            line-height: 1.75; margin: .85rem 0 1.3rem; position: relative;
+        }
+        .pb-tags { display: flex; gap: .4rem; flex-wrap: wrap; justify-content: center; position: relative; }
+        .pb-tag {
+            border: 1px solid rgba(200,168,75,.45); padding: .2rem .48rem;
+            font-size: .42rem; color: var(--gold); letter-spacing: .12em; text-transform: uppercase;
+        }
+
+        /* Hero stats */
+        .hero-stats {
+            position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 2.5rem; align-items: center; z-index: 2;
+        }
+        .stat { text-align: center; }
+        .stat .num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem; font-weight: 600; color: var(--gold); display: block;
+        }
+        .stat .lbl {
+            font-size: .62rem; letter-spacing: .17em;
+            text-transform: uppercase; color: rgba(255,255,255,.48);
+        }
+        .stat-sep { width: 1px; height: 44px; background: rgba(255,255,255,.15); }
+
+        /* ── SHARED SECTION STYLES ───────────────────── */
+        .container { max-width: 1000px; margin: 0 auto; }
+        .section-h {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 400;
+            color: var(--brown-dark); line-height: 1.2; margin-bottom: 1.4rem;
+        }
+        .section-h em { font-style: italic; color: var(--mid-green); }
+        .section-h.light { color: var(--off-white); }
+        .section-h.light em { color: var(--gold); }
+
+        /* ── ABOUT ───────────────────────────────────── */
+        .about {
+            padding: 6rem 2.5rem;
+            background: var(--cream);
+            border-top: 3px solid transparent;
+            border-image: linear-gradient(to right, var(--deep-green), var(--gold), var(--deep-green)) 1;
+        }
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 4rem; align-items: center; margin-top: 3rem;
+        }
+        .about-text p {
+            color: var(--text-mid); line-height: 1.85;
+            font-size: .96rem; margin-bottom: 1.1rem;
+        }
+        .highlights { display: flex; flex-direction: column; gap: 1.6rem; }
+        .hl { display: flex; gap: 1rem; align-items: flex-start; }
+        .hl-icon {
+            width: 42px; height: 42px; min-width: 42px;
+            background: var(--deep-green); display: flex;
+            align-items: center; justify-content: center; font-size: 1.25rem;
+        }
+        .hl-text h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem; font-weight: 600; color: var(--brown-dark); margin-bottom: .2rem;
+        }
+        .hl-text p { font-size: .83rem; color: var(--text-mid); line-height: 1.65; }
+
+        /* ── BENEFITS ────────────────────────────────── */
+        .benefits { padding: 6rem 2.5rem; background: var(--deep-green); }
+        .center-block { text-align: center; max-width: 620px; margin: 0 auto 4rem; }
+        .center-block p { color: rgba(255,255,255,.62); font-size: .95rem; line-height: 1.76; }
+
+        .benefits-grid {
+            display: grid; grid-template-columns: repeat(2,1fr);
+            gap: 1.4rem; max-width: 860px; margin: 0 auto;
+        }
+        .benefit-card {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(200,168,75,.18);
+            padding: 2rem;
+            transition: background .3s, border-color .3s, transform .3s;
+        }
+        .benefit-card:hover {
+            background: rgba(255,255,255,.07);
+            border-color: rgba(200,168,75,.5);
+            transform: translateY(-5px);
+        }
+        .bc-icon { font-size: 2.4rem; margin-bottom: .9rem; display: block; }
+        .benefit-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem; font-weight: 600; color: var(--off-white); margin-bottom: .6rem;
+        }
+        .benefit-card p { font-size: .87rem; color: rgba(255,255,255,.6); line-height: 1.72; }
+
+        /* ── HOW TO BREW ─────────────────────────────── */
+        .brew { padding: 6rem 2.5rem; background: var(--cream-light); }
+        .brew-layout {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 5rem; align-items: center; margin-top: 3rem;
+        }
+        .brew-steps { display: flex; flex-direction: column; gap: 2rem; }
+        .brew-step { display: flex; gap: 1.4rem; align-items: flex-start; }
+        .step-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem; font-weight: 300;
+            color: var(--light-green); opacity: .35; line-height: 1; min-width: 48px;
+        }
+        .step-body h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem; font-weight: 600; color: var(--brown-dark); margin-bottom: .3rem;
+        }
+        .step-body p { font-size: .87rem; color: var(--text-mid); line-height: 1.7; }
+        .brew-visual { display: flex; align-items: center; justify-content: center; }
+        .brew-circle {
+            width: 270px; height: 270px; border-radius: 50%;
+            background: linear-gradient(145deg, var(--deep-green), var(--mid-green));
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center; text-align: center; padding: 2rem;
+            box-shadow: 0 20px 55px rgba(28,59,28,.3);
+        }
+        .brew-circle .cup { font-size: 3.8rem; margin-bottom: .8rem; }
+        .brew-circle h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem; font-weight: 400; color: var(--off-white); margin-bottom: .4rem;
+        }
+        .brew-circle p { font-size: .72rem; color: rgba(255,255,255,.52); letter-spacing: .06em; line-height: 1.6; }
+
+        /* ── TESTIMONIALS ────────────────────────────── */
+        .testimonials { padding: 6rem 2.5rem; background: var(--cream); }
+        .testi-grid {
+            display: grid; grid-template-columns: repeat(3,1fr);
+            gap: 1.4rem; max-width: 980px; margin: 0 auto;
+        }
+        .testi-card {
+            background: var(--off-white); padding: 2rem;
+            border-bottom: 3px solid var(--deep-green);
+        }
+        .quote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem; color: var(--deep-green); opacity: .15; line-height: .55; margin-bottom: .7rem;
+        }
+        .testi-stars { color: var(--gold); font-size: .8rem; margin-bottom: .6rem; }
+        .testi-text {
+            font-size: .88rem; color: var(--text-mid); line-height: 1.75;
+            font-style: italic; margin-bottom: 1.5rem;
+        }
+        .testi-author { display: flex; align-items: center; gap: .75rem; }
+        .testi-avatar {
+            width: 38px; height: 38px; border-radius: 50%;
+            background: var(--deep-green); display: flex; align-items: center; justify-content: center;
+            font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold); font-weight: 600;
+        }
+        .testi-name { font-size: .84rem; font-weight: 700; color: var(--brown-dark); }
+        .testi-loc { font-size: .72rem; color: rgba(0,0,0,.38); }
+
+        /* ── ORDER ───────────────────────────────────── */
+        .order-section { padding: 6rem 2.5rem; background: var(--deep-green); text-align: center; }
+        .price-display {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5.5rem; font-weight: 600; color: var(--gold);
+            line-height: 1; margin: 2rem 0 .4rem;
+        }
+        .price-display sup { font-size: 2.8rem; vertical-align: top; margin-top: .8rem; display: inline-block; }
+        .price-note {
+            font-size: .74rem; color: rgba(255,255,255,.42);
+            letter-spacing: .14em; text-transform: uppercase; margin-bottom: 2.5rem;
+        }
+        .price-includes {
+            display: flex; gap: 2.5rem; justify-content: center;
+            flex-wrap: wrap; margin-bottom: 3rem;
+        }
+        .pi { display: flex; align-items: center; gap: .55rem; color: rgba(255,255,255,.68); font-size: .85rem; }
+        .pi::before { content: '✓'; color: var(--gold); font-weight: 700; }
+
+        /* ── CONTACT ─────────────────────────────────── */
+        .contact-section { padding: 6rem 2.5rem; background: var(--cream-light); }
+        .contact-layout {
+            display: grid; grid-template-columns: 1fr 1.6fr;
+            gap: 5rem; max-width: 900px; margin: 3rem auto 0; align-items: start;
+        }
+        .contact-info p { font-size: .93rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 2rem; }
+        .contact-detail { display: flex; gap: .9rem; align-items: center; margin-bottom: .9rem; }
+        .cd-icon {
+            width: 34px; height: 34px; min-width: 34px;
+            background: var(--deep-green); display: flex;
+            align-items: center; justify-content: center; font-size: .9rem;
+        }
+        .cd-text { font-size: .87rem; color: var(--text-mid); }
+
+        .contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .fg label {
+            display: block; font-size: .67rem; font-weight: 700;
+            letter-spacing: .12em; text-transform: uppercase;
+            color: var(--mid-green); margin-bottom: .35rem;
+        }
+        .fg input, .fg select, .fg textarea {
+            width: 100%; background: var(--off-white);
+            border: 1px solid rgba(0,0,0,.1);
+            padding: .82rem 1rem; font-family: 'Lato', sans-serif;
+            font-size: .92rem; color: var(--text-dark); outline: none;
+            transition: border-color .2s;
+        }
+        .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--mid-green); }
+        .fg textarea { resize: vertical; min-height: 110px; }
+        .form-btn {
+            background: var(--deep-green); color: var(--off-white); border: none;
+            padding: 1rem 2rem; font-family: 'Lato', sans-serif;
+            font-size: .8rem; font-weight: 700; letter-spacing: .15em;
+            text-transform: uppercase; cursor: pointer; width: 100%;
+            transition: background .25s;
+        }
+        .form-btn:hover { background: var(--mid-green); }
+        .form-success {
+            display: none; padding: 2.5rem; text-align: center;
+            background: rgba(28,59,28,.07); border: 1px solid var(--mid-green);
+        }
+        .form-success p { color: var(--deep-green); font-weight: 700; font-size: 1rem; margin-bottom: .5rem; }
+        .form-success small { color: var(--text-mid); font-size: .83rem; line-height: 1.6; }
+
+        /* ── FOOTER ──────────────────────────────────── */
+        footer { background: var(--brown-dark); padding: 3.5rem 2.5rem; text-align: center; }
+        .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem; font-weight: 600; color: var(--off-white); margin-bottom: .4rem;
+        }
+        .footer-brand em { color: var(--gold); font-style: normal; }
+        .footer-sub { font-size: .6rem; letter-spacing: .26em; text-transform: uppercase; color: rgba(255,255,255,.32); margin-bottom: 2rem; }
+        .footer-hr { height: 1px; background: rgba(255,255,255,.1); max-width: 360px; margin: 0 auto 2rem; }
+        .footer-copy { font-size: .72rem; color: rgba(255,255,255,.26); }
+
+        /* ── SCROLL ANIMATIONS ───────────────────────── */
+        .fu { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+        .fu.visible { opacity: 1; transform: translateY(0); }
+        .fu-d1 { transition-delay: .1s; }
+        .fu-d2 { transition-delay: .2s; }
+        .fu-d3 { transition-delay: .3s; }
+        .fu-d4 { transition-delay: .4s; }
+
+        /* ── RESPONSIVE ──────────────────────────────── */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.2rem; }
+            .hero { padding: 7rem 1.2rem 9rem; }
+            .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+            .eyebrow:not(.center) { justify-content: center; }
+            .eyebrow:not(.center)::before { display: none; }
+            .hero-desc { max-width: 100%; }
+            .hero-btns { justify-content: center; }
+            .product-wrap { order: -1; }
+            .product-box { width: 170px; }
+            .hero-stats { gap: 1.2rem; bottom: 1.5rem; flex-wrap: wrap; justify-content: center; }
+            .stat-sep { display: none; }
+            .about-grid, .brew-layout, .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+            .benefits-grid, .testi-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .price-display { font-size: 3.8rem; }
+            .brew-visual { order: -1; }
+            .price-includes { gap: 1rem; flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+    <a href="#" class="nav-brand"><em>Celie</em> Tea</a>
+    <a href="#order" class="nav-order">Order Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <!-- Signature botanical SVG background -->
+    <svg class="hero-botanical" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+        <g fill="none" stroke="#C8A84B" stroke-width="1.2">
+            <!-- Large leaf top-left -->
+            <path d="M 120,320 Q 50,-20 200,-30 Q 160,100 120,320 Z" />
+            <path d="M 120,320 Q 130,150 200,-30" />
+            <path d="M 120,320 Q 80,200 130,100" />
+            <path d="M 120,320 Q 100,250 160,60" />
+            <!-- Large leaf bottom-right -->
+            <path d="M 1280,580 Q 1420,350 1350,200 Q 1260,340 1280,580 Z" transform="rotate(25,1310,390)"/>
+            <path d="M 1280,580 Q 1310,400 1350,200" transform="rotate(25,1310,390)"/>
+            <!-- Medium leaf top-right -->
+            <path d="M 1200,50 Q 1380,80 1360,220 Q 1250,160 1200,50 Z" />
+            <path d="M 1200,50 Q 1290,110 1360,220" />
+            <!-- Scattered small leaves -->
+            <ellipse cx="380" cy="820" rx="38" ry="75" transform="rotate(-20,380,820)"/>
+            <line x1="380" y1="745" x2="380" y2="895" transform="rotate(-20,380,820)"/>
+            <ellipse cx="800" cy="60" rx="28" ry="55" transform="rotate(10,800,60)"/>
+            <line x1="800" y1="5" x2="800" y2="115" transform="rotate(10,800,60)"/>
+            <ellipse cx="600" cy="780" rx="22" ry="44" transform="rotate(30,600,780)"/>
+            <ellipse cx="980" cy="820" rx="18" ry="36" transform="rotate(-15,980,820)"/>
+            <!-- Branch lines -->
+            <path d="M 50,700 Q 150,600 120,450 Q 80,550 50,700" stroke-width=".8"/>
+            <line x1="50" y1="700" x2="120" y2="450" stroke-width=".8"/>
+            <path d="M 1350,800 Q 1300,700 1320,600" stroke-width=".8"/>
+        </g>
+    </svg>
+
+    <div class="hero-inner">
+        <div class="hero-text">
+            <p class="eyebrow">African Botanicals</p>
+            <h1>
+                Restore your<br>natural balance
+                <strong>with every sip</strong>
+            </h1>
+            <p class="hero-desc">
+                Celie Tea's Hormonal Balance Tea is a rich, robust blend of African botanical herbs — crafted to support women's wellness from the inside out. Proudly African. Powerfully healing.
+            </p>
+            <div class="hero-btns">
+                <a href="#order" class="btn-gold">Order Now — ₦13,000</a>
+                <a href="#benefits" class="btn-outline">See Benefits</a>
+            </div>
+        </div>
+
+        <!-- CSS product box -->
+        <div class="product-wrap">
+            <div class="product-glow"></div>
+            <div class="product-box">
+                <div class="steam-row">
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                </div>
+                <div class="pb-circle">
+                    <span>Celie<br>Tea</span>
+                </div>
+                <p class="pb-sub">African Botanicals</p>
+                <p class="pb-name">
+                    Hormonal<br>Balance
+                    <em>Tea</em>
+                </p>
+                <p class="pb-tagline">
+                    Rich, Robust<br>
+                    Satisfying and Healing<br>
+                    Proudly African Tea.
+                </p>
+                <div class="pb-tags">
+                    <span class="pb-tag">90g</span>
+                    <span class="pb-tag">15 Bags</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-stats">
+        <div class="stat">
+            <span class="num">100%</span>
+            <span class="lbl">Natural Herbs</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+            <span class="num">15</span>
+            <span class="lbl">Tea Bags</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+            <span class="num">500+</span>
+            <span class="lbl">Happy Customers</span>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="fu">
+            <p class="eyebrow green">Our Story</p>
+            <h2 class="section-h">Healing rooted in <em>African tradition</em></h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-text fu fu-d1">
+                <p>Celie Tea was born from a deep respect for the wisdom of African herbalism. For generations, African women have turned to nature's botanicals to support their bodies through every season of life.</p>
+                <p>The Hormonal Balance Tea is a carefully curated blend of these time-honoured herbs — formulated to gently restore harmony to your hormones, ease discomfort, and nourish your overall wellbeing.</p>
+                <p>Every cup is a sip of tradition, packaged with love and delivered to your door.</p>
+            </div>
+            <div class="highlights fu fu-d2">
+                <div class="hl">
+                    <div class="hl-icon">🌿</div>
+                    <div class="hl-text">
+                        <h4>All-Natural Ingredients</h4>
+                        <p>No artificial additives or chemicals — just pure botanical goodness, exactly as nature intended.</p>
+                    </div>
+                </div>
+                <div class="hl">
+                    <div class="hl-icon">🌍</div>
+                    <div class="hl-text">
+                        <h4>Proudly African</h4>
+                        <p>Rooted in African botanical heritage and proudly produced for women across the continent.</p>
+                    </div>
+                </div>
+                <div class="hl">
+                    <div class="hl-icon">✨</div>
+                    <div class="hl-text">
+                        <h4>Made for Women</h4>
+                        <p>Specifically crafted to support the unique hormonal needs of women at every stage of life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits" id="benefits">
+    <div class="container">
+        <div class="center-block fu">
+            <p class="eyebrow center">What It Does</p>
+            <h2 class="section-h light">Four ways it <em>supports you</em></h2>
+            <p>Each cup works quietly in the background — supporting your body's natural rhythms so you can feel more like yourself, every day.</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card fu fu-d1">
+                <span class="bc-icon">🌸</span>
+                <h3>Eases PMS & Period Pain</h3>
+                <p>Soothes cramping, bloating, and mood swings during your menstrual cycle — so your period doesn't have to slow you down.</p>
+            </div>
+            <div class="benefit-card fu fu-d2">
+                <span class="bc-icon">⚖️</span>
+                <h3>Regulates Hormones Naturally</h3>
+                <p>Supports the balance of estrogen and progesterone using time-tested African botanicals, without synthetic hormones.</p>
+            </div>
+            <div class="benefit-card fu fu-d3">
+                <span class="bc-icon">⚡</span>
+                <h3>Boosts Energy & Mood</h3>
+                <p>Helps lift brain fog, reduce hormonal fatigue, and restore the clarity and calm you deserve to feel each day.</p>
+            </div>
+            <div class="benefit-card fu fu-d4">
+                <span class="bc-icon">🌱</span>
+                <h3>Supports Reproductive Health</h3>
+                <p>Nourishes your body's natural fertility rhythm and supports long-term reproductive wellness gently and consistently.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW TO BREW -->
+<section class="brew" id="brew">
+    <div class="container">
+        <div class="fu">
+            <p class="eyebrow green">How to Brew</p>
+            <h2 class="section-h">Four steps to your <em>perfect cup</em></h2>
+        </div>
+        <div class="brew-layout">
+            <div class="brew-steps">
+                <div class="brew-step fu fu-d1">
+                    <span class="step-num">01</span>
+                    <div class="step-body">
+                        <h4>Boil Fresh Water</h4>
+                        <p>Heat clean water to about 95°C — just before a rolling boil to preserve the herbs' natural goodness.</p>
+                    </div>
+                </div>
+                <div class="brew-step fu fu-d2">
+                    <span class="step-num">02</span>
+                    <div class="step-body">
+                        <h4>Place Your Tea Bag</h4>
+                        <p>Drop one Celie Tea bag into your cup or mug, then pour the hot water over it gently.</p>
+                    </div>
+                </div>
+                <div class="brew-step fu fu-d3">
+                    <span class="step-num">03</span>
+                    <div class="step-body">
+                        <h4>Steep for 5 Minutes</h4>
+                        <p>Let the botanicals bloom fully. The longer the steep, the richer and more healing the cup becomes.</p>
+                    </div>
+                </div>
+                <div class="brew-step fu fu-d4">
+                    <span class="step-num">04</span>
+                    <div class="step-body">
+                        <h4>Sip & Restore</h4>
+                        <p>Remove the bag, breathe in the warm aroma, and sip slowly. Best enjoyed morning or evening.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="brew-visual fu">
+                <div class="brew-circle">
+                    <div class="cup">☕</div>
+                    <h3>Rich & Soothing</h3>
+                    <p>1 cup · twice daily<br>for best results</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="reviews">
+    <div class="container">
+        <div class="center-block fu" style="max-width:600px; margin: 0 auto 4rem; text-align:center;">
+            <p class="eyebrow center" style="color: var(--mid-green);">Real Reviews</p>
+            <h2 class="section-h">Women who love <em>Celie Tea</em></h2>
+        </div>
+        <div class="testi-grid">
+            <div class="testi-card fu fu-d1">
+                <div class="quote-mark">"</div>
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">After just three weeks of drinking this tea daily, my periods have become so much more bearable. The cramping is barely noticeable now. Celie Tea is a lifesaver!</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">A</div>
+                    <div>
+                        <p class="testi-name">Amaka O.</p>
+                        <p class="testi-loc">Lagos, Nigeria</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card fu fu-d2">
+                <div class="quote-mark">"</div>
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">My hormones have been all over the place since I turned 35. This tea is the only natural remedy that has actually worked for me. I order a fresh box every single month.</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">F</div>
+                    <div>
+                        <p class="testi-name">Fatima A.</p>
+                        <p class="testi-loc">Abuja, Nigeria</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card fu fu-d3">
+                <div class="quote-mark">"</div>
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">The taste is rich and warming — I genuinely look forward to it each morning. But more than anything, the difference I feel every month speaks for itself. Highly recommend.</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">C</div>
+                    <div>
+                        <p class="testi-name">Chidinma E.</p>
+                        <p class="testi-loc">Enugu, Nigeria</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ORDER -->
+<section class="order-section" id="order">
+    <div class="container">
+        <div class="fu">
+            <p class="eyebrow center">Place Your Order</p>
+            <h2 class="section-h light">Ready to feel <em>balanced again?</em></h2>
+        </div>
+        <div class="price-display fu"><sup>₦</sup>13,000</div>
+        <p class="price-note fu">Per box · 15 tea bags · 90g</p>
+        <div class="price-includes fu">
+            <span class="pi">15 Premium Tea Bags</span>
+            <span class="pi">Proudly African Blend</span>
+            <span class="pi">No Artificial Additives</span>
+        </div>
+        <a href="#contact" class="btn-gold fu" style="font-size:.9rem; padding: 1rem 3rem;">Send Your Order</a>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="fu">
+            <p class="eyebrow green">Get in Touch</p>
+            <h2 class="section-h">Order or ask us <em>anything</em></h2>
+        </div>
+        <div class="contact-layout">
+            <div class="contact-info fu">
+                <p>Fill the form to place an order or ask any questions about Celie Tea. We will get back to you as soon as possible to confirm your order and arrange delivery.</p>
+                <div class="contact-detail">
+                    <div class="cd-icon">📦</div>
+                    <span class="cd-text">Delivery available across Nigeria</span>
+                </div>
+                <div class="contact-detail">
+                    <div class="cd-icon">⏱️</div>
+                    <span class="cd-text">We respond within 24 hours</span>
+                </div>
+                <div class="contact-detail">
+                    <div class="cd-icon">💳</div>
+                    <span class="cd-text">Flexible payment options available</span>
+                </div>
+            </div>
+            <div class="fu fu-d1">
+                <div class="contact-form" id="contact-form">
+                    <div class="form-row">
+                        <div class="fg">
+                            <label for="fname">Full Name</label>
+                            <input type="text" id="fname" placeholder="Your full name">
+                        </div>
+                        <div class="fg">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="08012345678">
+                        </div>
+                    </div>
+                    <div class="fg">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="you@example.com">
+                    </div>
+                    <div class="fg">
+                        <label for="enquiry">What is this about?</label>
+                        <select id="enquiry">
+                            <option value="">Select a reason</option>
+                            <option value="order">Place an Order</option>
+                            <option value="inquiry">Product Inquiry</option>
+                            <option value="delivery">Delivery Information</option>
+                            <option value="other">Something Else</option>
+                        </select>
+                    </div>
+                    <div class="fg">
+                        <label for="quantity">How many boxes?</label>
+                        <select id="quantity">
+                            <option value="1">1 Box — ₦13,000</option>
+                            <option value="2">2 Boxes — ₦26,000</option>
+                            <option value="3">3 Boxes — ₦39,000</option>
+                            <option value="other">Other quantity</option>
+                        </select>
+                    </div>
+                    <div class="fg">
+                        <label for="address">Delivery Address</label>
+                        <input type="text" id="address" placeholder="Street, City, State">
+                    </div>
+                    <div class="fg">
+                        <label for="message">Additional Message</label>
+                        <textarea id="message" placeholder="Any extra notes, questions, or special requests…"></textarea>
+                    </div>
+                    <button class="form-btn" id="submit-btn">Send Message</button>
+                </div>
+                <div class="form-success" id="form-success">
+                    <p>✅ Message sent successfully!</p>
+                    <small>Thank you for reaching out to Celie Tea.<br>We will contact you within 24 hours to confirm your order.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p class="footer-brand"><em>Celie</em> Tea</p>
+    <p class="footer-sub">African Botanicals</p>
+    <div class="footer-hr"></div>
+    <p class="footer-copy">© 2025 Celie Tea. All rights reserved. Healing, Naturally.</p>
+</footer>
+
+<script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Scroll fade-up
+    const fuEls = document.querySelectorAll('.fu');
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                io.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    fuEls.forEach(el => io.observe(el));
+
+    // Form submit
+    document.getElementById('submit-btn').addEventListener('click', function () {
+        const name  = document.getElementById('fname').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        if (!name || !phone) {
+            alert('Please fill in your name and phone number to continue.');
+            return;
+        }
+        document.getElementById('contact-form').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+    });
+</script>
+</body>
+</html>

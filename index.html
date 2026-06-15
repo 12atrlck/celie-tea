@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Celie Tea — Hormonal Balance Tea | African Botanicals</title>
-    <meta name="description" content="Celie Tea Hormonal Balance Tea — Rich, Robust, Satisfying and Healing. Proudly African. Order yours today.">
+    <meta name="description" content="Celie Tea Hormonal Balance Tea — Herbal Tea for women and men's vitality. Relieves hormonal imbalance, boosts libido, cleanses the gut, and regulates menstrual flow. Proudly African. Order yours today.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -275,6 +275,7 @@
             display: grid; grid-template-columns: repeat(2,1fr);
             gap: 1.4rem; max-width: 860px; margin: 0 auto;
         }
+        .benefit-card.span-full { grid-column: 1 / -1; max-width: 420px; margin: 0 auto; width: 100%; }
         .benefit-card {
             background: rgba(255,255,255,.04);
             border: 1px solid rgba(200,168,75,.18);
@@ -325,6 +326,48 @@
             font-size: 1.3rem; font-weight: 400; color: var(--off-white); margin-bottom: .4rem;
         }
         .brew-circle p { font-size: .72rem; color: rgba(255,255,255,.52); letter-spacing: .06em; line-height: 1.6; }
+
+        /* ── INGREDIENTS ─────────────────────────────── */
+        .ingredients { padding: 5rem 2.5rem; background: var(--deep-green); }
+        .ingredients .center-block p { color: rgba(255,255,255,.62); }
+        .ingr-grid {
+            display: grid; grid-template-columns: repeat(4,1fr);
+            gap: 1rem; max-width: 860px; margin: 0 auto;
+        }
+        .ingr-card {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(200,168,75,.2);
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            transition: background .3s, border-color .3s, transform .3s;
+        }
+        .ingr-card:hover {
+            background: rgba(255,255,255,.08);
+            border-color: rgba(200,168,75,.5);
+            transform: translateY(-4px);
+        }
+        .ingr-icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
+        .ingr-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem; font-weight: 600; color: var(--off-white); margin-bottom: .4rem;
+        }
+        .ingr-pct {
+            font-size: .7rem; color: var(--gold); font-weight: 700;
+            letter-spacing: .1em; display: block;
+        }
+        .caution-box {
+            max-width: 620px; margin: 3rem auto 0;
+            background: rgba(200,168,75,.08);
+            border: 1px solid rgba(200,168,75,.3);
+            padding: 1.2rem 1.8rem;
+            display: flex; gap: 1rem; align-items: flex-start;
+        }
+        .caution-box .caution-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: .1rem; }
+        .caution-box p { font-size: .83rem; color: rgba(255,255,255,.65); line-height: 1.65; }
+        .caution-box strong { color: var(--gold); }
+        @media (max-width: 768px) {
+            .ingr-grid { grid-template-columns: repeat(2,1fr); }
+        }
 
         /* ── TESTIMONIALS ────────────────────────────── */
         .testimonials { padding: 6rem 2.5rem; background: var(--cream); }
@@ -458,6 +501,120 @@
             .brew-visual { order: -1; }
             .price-includes { gap: 1rem; flex-direction: column; align-items: center; }
         }
+
+        /* ── EXTRA ANIMATIONS ───────────────────────── */
+        @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        @keyframes gentle-rotate { 0%,100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        @keyframes pop-in {
+            0% { opacity: 0; transform: scale(.85) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(200,168,75,.6); }
+            70% { box-shadow: 0 0 0 18px rgba(200,168,75,0); }
+            100% { box-shadow: 0 0 0 0 rgba(200,168,75,0); }
+        }
+        @keyframes slide-x {
+            0% { opacity: 0; transform: translateX(-30px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes leaf-sway {
+            0%,100% { transform: rotate(0deg) translateY(0); }
+            50% { transform: rotate(6deg) translateY(-6px); }
+        }
+
+        .product-wrap { animation: floaty 5s ease-in-out infinite; }
+        .pb-circle { animation: gentle-rotate 6s ease-in-out infinite; }
+        .hero-botanical g > * { animation: leaf-sway 9s ease-in-out infinite; transform-origin: center; }
+        .nav-order { animation: pulse-ring 2.4s infinite; }
+        .nav-order:hover { transform: scale(1.06); }
+        .btn-gold { position: relative; overflow: hidden; }
+        .btn-gold::after {
+            content: ''; position: absolute; top: 0; left: -75%;
+            width: 50%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,.45), transparent);
+            transform: skewX(-20deg);
+            transition: left .7s;
+        }
+        .btn-gold:hover::after { left: 125%; }
+        .benefit-card, .ingr-card, .hl, .testi-card, .brew-step {
+            transition: transform .35s ease, box-shadow .35s ease, background .35s ease;
+        }
+        .benefit-card:hover, .ingr-card:hover, .testi-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 18px 40px rgba(0,0,0,.18);
+        }
+        .hl:hover { transform: translateX(6px); }
+        .brew-step:hover .step-num { color: var(--gold); transform: scale(1.15); transition: all .3s; }
+        .step-num { transition: all .3s; display: inline-block; }
+        .testi-stars { display: inline-block; transition: transform .3s; }
+        .testi-card:hover .testi-stars { transform: scale(1.15); }
+        .fg input, .fg select, .fg textarea { transition: border-color .25s, transform .25s, box-shadow .25s; }
+        .fg input:focus, .fg select:focus, .fg textarea:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(28,59,28,.08);
+        }
+        .price-display {
+            background: linear-gradient(90deg, var(--gold), #fff3c4, var(--gold));
+            background-size: 200% auto;
+            -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3.5s linear infinite;
+        }
+        .cd-icon { transition: transform .3s, background .3s; }
+        .contact-detail:hover .cd-icon { transform: rotate(-10deg) scale(1.15); background: var(--gold); color: var(--deep-green); }
+
+        /* ── REVIEWS (user submitted) ───────────────── */
+        .reviews-section { padding: 6rem 2.5rem; background: var(--cream); }
+        .reviews-layout {
+            display: grid; grid-template-columns: 1fr 1.4fr;
+            gap: 4rem; max-width: 1100px; margin: 3rem auto 0; align-items: start;
+        }
+        .review-form-card {
+            background: var(--off-white); padding: 2.2rem;
+            border: 1px solid rgba(200,168,75,.3);
+            border-top: 4px solid var(--gold);
+            box-shadow: 0 12px 40px rgba(28,59,28,.08);
+            position: sticky; top: 100px;
+        }
+        .review-form-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem; color: var(--deep-green); margin-bottom: 1.2rem;
+        }
+        .star-input { display: flex; gap: .35rem; margin-bottom: 1.1rem; }
+        .star-input span {
+            font-size: 1.8rem; color: #ddd; cursor: pointer;
+            transition: transform .2s, color .2s;
+        }
+        .star-input span:hover { transform: scale(1.25); }
+        .star-input span.active { color: var(--gold); }
+        .reviews-list { display: grid; gap: 1.2rem; }
+        .review-item {
+            background: var(--off-white); padding: 1.5rem 1.7rem;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 6px 20px rgba(0,0,0,.05);
+            animation: pop-in .5s ease both;
+            transition: transform .3s, box-shadow .3s;
+        }
+        .review-item:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(0,0,0,.1); }
+        .review-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; margin-bottom: .5rem; }
+        .review-name { font-weight: 700; color: var(--deep-green); }
+        .review-stars { color: var(--gold); letter-spacing: .12em; }
+        .review-text { font-size: .92rem; color: var(--text-mid); line-height: 1.6; }
+        .review-date { font-size: .7rem; color: #999; letter-spacing: .1em; text-transform: uppercase; }
+        .reviews-empty {
+            background: var(--off-white); padding: 2.5rem; text-align: center;
+            border: 1px dashed rgba(200,168,75,.4); color: var(--text-mid);
+        }
+
+        @media (max-width: 768px) {
+            .reviews-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+            .review-form-card { position: static; padding: 1.6rem; }
+        }
     </style>
 </head>
 <body>
@@ -506,7 +663,7 @@
                 <strong>with every sip</strong>
             </h1>
             <p class="hero-desc">
-                Celie Tea's Hormonal Balance Tea is a rich, robust blend of African botanical herbs — crafted to support women's wellness from the inside out. Proudly African. Powerfully healing.
+                Celie Tea's Hormonal Balance Tea is a rich, robust herbal blend crafted for both women's hormonal health and men's vitality. Rooted in pure African botanicals — healing naturally from the inside out.
             </p>
             <div class="hero-btns">
                 <a href="#order" class="btn-gold">Order Now — ₦13,000</a>
@@ -571,8 +728,8 @@
         </div>
         <div class="about-grid">
             <div class="about-text fu fu-d1">
-                <p>Celie Tea was born from a deep respect for the wisdom of African herbalism. For generations, African women have turned to nature's botanicals to support their bodies through every season of life.</p>
-                <p>The Hormonal Balance Tea is a carefully curated blend of these time-honoured herbs — formulated to gently restore harmony to your hormones, ease discomfort, and nourish your overall wellbeing.</p>
+                <p>Celie Tea was born from a deep respect for the wisdom of African herbalism. For generations, people across Africa have turned to nature's botanicals to support their bodies through every season of life.</p>
+                <p>The Hormonal Balance Tea is a carefully curated blend of time-honoured herbs — formulated to gently restore hormonal harmony, ease discomfort, and nourish your overall vitality. Produced by N&A Scandic Limited and registered with NAFDAC (Reg. No. A7-103118L).</p>
                 <p>Every cup is a sip of tradition, packaged with love and delivered to your door.</p>
             </div>
             <div class="highlights fu fu-d2">
@@ -580,21 +737,21 @@
                     <div class="hl-icon">🌿</div>
                     <div class="hl-text">
                         <h4>All-Natural Ingredients</h4>
-                        <p>No artificial additives or chemicals — just pure botanical goodness, exactly as nature intended.</p>
+                        <p>No artificial additives or chemicals — just pure botanical goodness from Vertivier roots, Nilotic acacial seeds, Aidan fruit, and Kopabama.</p>
                     </div>
                 </div>
                 <div class="hl">
                     <div class="hl-icon">🌍</div>
                     <div class="hl-text">
                         <h4>Proudly African</h4>
-                        <p>Rooted in African botanical heritage and proudly produced for women across the continent.</p>
+                        <p>Rooted in African botanical heritage and proudly produced for people across the continent and beyond.</p>
                     </div>
                 </div>
                 <div class="hl">
                     <div class="hl-icon">✨</div>
                     <div class="hl-text">
-                        <h4>Made for Women</h4>
-                        <p>Specifically crafted to support the unique hormonal needs of women at every stage of life.</p>
+                        <h4>For Women & Men</h4>
+                        <p>Crafted for both women's hormonal health and men's vitality — because balance and wellness matter for everyone.</p>
                     </div>
                 </div>
             </div>
@@ -606,30 +763,35 @@
 <section class="benefits" id="benefits">
     <div class="container">
         <div class="center-block fu">
-            <p class="eyebrow center">What It Does</p>
-            <h2 class="section-h light">Four ways it <em>supports you</em></h2>
+            <p class="eyebrow center">Indications</p>
+            <h2 class="section-h light">Five ways it <em>heals you</em></h2>
             <p>Each cup works quietly in the background — supporting your body's natural rhythms so you can feel more like yourself, every day.</p>
         </div>
         <div class="benefits-grid">
             <div class="benefit-card fu fu-d1">
-                <span class="bc-icon">🌸</span>
-                <h3>Eases PMS & Period Pain</h3>
-                <p>Soothes cramping, bloating, and mood swings during your menstrual cycle — so your period doesn't have to slow you down.</p>
+                <span class="bc-icon">⚖️</span>
+                <h3>Relieves Hormonal Imbalance</h3>
+                <p>Aids fertility by gently restoring hormonal balance using time-tested African botanical herbs, without synthetic hormones.</p>
             </div>
             <div class="benefit-card fu fu-d2">
-                <span class="bc-icon">⚖️</span>
-                <h3>Regulates Hormones Naturally</h3>
-                <p>Supports the balance of estrogen and progesterone using time-tested African botanicals, without synthetic hormones.</p>
+                <span class="bc-icon">🔥</span>
+                <h3>Boosts Vitality & Libido</h3>
+                <p>Naturally increases feminine libido and supports men's vitality — helping you feel energised, confident, and alive.</p>
             </div>
             <div class="benefit-card fu fu-d3">
-                <span class="bc-icon">⚡</span>
-                <h3>Boosts Energy & Mood</h3>
-                <p>Helps lift brain fog, reduce hormonal fatigue, and restore the clarity and calm you deserve to feel each day.</p>
+                <span class="bc-icon">✨</span>
+                <h3>Cleanses for a Natural Glow</h3>
+                <p>Cleanses the gut and supports the body's natural detox process, resulting in clearer, glowing skin from within.</p>
             </div>
             <div class="benefit-card fu fu-d4">
-                <span class="bc-icon">🌱</span>
-                <h3>Supports Reproductive Health</h3>
-                <p>Nourishes your body's natural fertility rhythm and supports long-term reproductive wellness gently and consistently.</p>
+                <span class="bc-icon">🛡️</span>
+                <h3>Flushes Out UTI & Odours</h3>
+                <p>Promotes the flushing out of UTI-causing bacteria, reducing itching, odours, and discomfort naturally and gently.</p>
+            </div>
+            <div class="benefit-card span-full fu">
+                <span class="bc-icon">🌸</span>
+                <h3>Relieves Cramps & Regulates Flow</h3>
+                <p>Soothes menstrual cramps and helps regulate your monthly flow — so your cycle works with you, not against you.</p>
             </div>
         </div>
     </div>
@@ -647,49 +809,86 @@
                 <div class="brew-step fu fu-d1">
                     <span class="step-num">01</span>
                     <div class="step-body">
-                        <h4>Boil Fresh Water</h4>
-                        <p>Heat clean water to about 95°C — just before a rolling boil to preserve the herbs' natural goodness.</p>
+                        <h4>Boil One Tea Bag</h4>
+                        <p>Place one Celie Tea bag in a cup or small pot, add boiling water, and let it boil gently for 5–10 minutes to release the full strength of the herbs.</p>
                     </div>
                 </div>
                 <div class="brew-step fu fu-d2">
                     <span class="step-num">02</span>
                     <div class="step-body">
-                        <h4>Place Your Tea Bag</h4>
-                        <p>Drop one Celie Tea bag into your cup or mug, then pour the hot water over it gently.</p>
+                        <h4>First Week: 3 Cups Daily</h4>
+                        <p>For the first week, drink 3 cups per day — morning, afternoon, and evening — to kickstart your body's healing response.</p>
                     </div>
                 </div>
                 <div class="brew-step fu fu-d3">
                     <span class="step-num">03</span>
                     <div class="step-body">
-                        <h4>Steep for 5 Minutes</h4>
-                        <p>Let the botanicals bloom fully. The longer the steep, the richer and more healing the cup becomes.</p>
+                        <h4>After Week One: Reduce Intake</h4>
+                        <p>From the second week onward, reduce to twice daily, or once daily, as your symptoms begin to ease and balance is restored.</p>
                     </div>
                 </div>
                 <div class="brew-step fu fu-d4">
                     <span class="step-num">04</span>
                     <div class="step-body">
-                        <h4>Sip & Restore</h4>
-                        <p>Remove the bag, breathe in the warm aroma, and sip slowly. Best enjoyed morning or evening.</p>
+                        <h4>Continue Until Fully Healed</h4>
+                        <p>Keep sipping until your symptoms are completely gone. Each cup brings you closer to restored balance and natural vitality.</p>
                     </div>
                 </div>
             </div>
             <div class="brew-visual fu">
                 <div class="brew-circle">
                     <div class="cup">☕</div>
-                    <h3>Rich & Soothing</h3>
-                    <p>1 cup · twice daily<br>for best results</p>
+                    <h3>Boil 5–10 mins</h3>
+                    <p>3 cups/day · Week 1<br>2 cups/day · Week 2+<br>until symptoms clear</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- INGREDIENTS -->
+<section class="ingredients" id="ingredients">
+    <div class="container">
+        <div class="center-block fu">
+            <p class="eyebrow center">What's Inside</p>
+            <h2 class="section-h light">Pure African <em>botanical ingredients</em></h2>
+            <p>Every ingredient in Celie Tea is a time-tested African botanical — carefully selected and blended in equal parts for maximum healing effect.</p>
+        </div>
+        <div class="ingr-grid">
+            <div class="ingr-card fu fu-d1">
+                <span class="ingr-icon">🌾</span>
+                <h4>Vertivier Roots</h4>
+                <span class="ingr-pct">25%</span>
+            </div>
+            <div class="ingr-card fu fu-d2">
+                <span class="ingr-icon">🍃</span>
+                <h4>Dry Djeka Leaves</h4>
+                <span class="ingr-pct">25%</span>
+            </div>
+            <div class="ingr-card fu fu-d3">
+                <span class="ingr-icon">🌿</span>
+                <h4>Aidan Fruit</h4>
+                <span class="ingr-pct">25%</span>
+            </div>
+            <div class="ingr-card fu fu-d4">
+                <span class="ingr-icon">🌱</span>
+                <h4>Kopabama</h4>
+                <span class="ingr-pct">25%</span>
+            </div>
+        </div>
+        <div class="caution-box fu">
+            <span class="caution-icon">⚠️</span>
+            <p><strong>CAUTION:</strong> Not to be taken by pregnant women and children below 12 years. These claims have not been evaluated by NAFDAC. NAFDAC Reg. No: A7-103118L</p>
+        </div>
+    </div>
+</section>
+
 <!-- TESTIMONIALS -->
-<section class="testimonials" id="reviews">
+<section class="testimonials" id="testimonials">
     <div class="container">
         <div class="center-block fu" style="max-width:600px; margin: 0 auto 4rem; text-align:center;">
             <p class="eyebrow center" style="color: var(--mid-green);">Real Reviews</p>
-            <h2 class="section-h">Women who love <em>Celie Tea</em></h2>
+            <h2 class="section-h">People who love <em>Celie Tea</em></h2>
         </div>
         <div class="testi-grid">
             <div class="testi-card fu fu-d1">
@@ -732,6 +931,40 @@
     </div>
 </section>
 
+<!-- USER REVIEWS -->
+<section class="reviews-section" id="reviews">
+    <div class="container">
+        <div class="center-block fu" style="max-width:640px; margin:0 auto 1rem; text-align:center;">
+            <p class="eyebrow center" style="color: var(--mid-green);">Customer Reviews</p>
+            <h2 class="section-h">Share your <em>Celie Tea story</em></h2>
+            <p style="color: var(--text-mid);">We love hearing from our community. Leave a review or read what others are saying.</p>
+        </div>
+        <div class="reviews-layout">
+            <div class="review-form-card fu fu-d1">
+                <h3>Write a Review</h3>
+                <div class="fg" style="margin-bottom:1rem;">
+                    <label for="rev-name">Your Name</label>
+                    <input type="text" id="rev-name" placeholder="e.g. Ada N.">
+                </div>
+                <div class="fg" style="margin-bottom:.6rem;">
+                    <label>Your Rating</label>
+                    <div class="star-input" id="star-input">
+                        <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span>
+                    </div>
+                </div>
+                <div class="fg" style="margin-bottom:1rem;">
+                    <label for="rev-text">Your Review</label>
+                    <textarea id="rev-text" placeholder="Tell us about your experience with Celie Tea…"></textarea>
+                </div>
+                <button class="form-btn" id="rev-submit">Submit Review</button>
+            </div>
+            <div>
+                <div class="reviews-list fu" id="reviews-list"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ORDER -->
 <section class="order-section" id="order">
     <div class="container">
@@ -761,16 +994,24 @@
             <div class="contact-info fu">
                 <p>Fill the form to place an order or ask any questions about Celie Tea. We will get back to you as soon as possible to confirm your order and arrange delivery.</p>
                 <div class="contact-detail">
+                    <div class="cd-icon">📞</div>
+                    <span class="cd-text"><a href="tel:+2348035984783" style="color:inherit; text-decoration:none;">+234 803 598 4783</a></span>
+                </div>
+                <div class="contact-detail">
+                    <div class="cd-icon">✉️</div>
+                    <span class="cd-text"><a href="mailto:customercare@celietea.com" style="color:inherit; text-decoration:none;">customercare@celietea.com</a></span>
+                </div>
+                <div class="contact-detail">
+                    <div class="cd-icon">💬</div>
+                    <span class="cd-text"><a href="https://wa.me/2348035984783" target="_blank" style="color:inherit; text-decoration:none;">Chat on WhatsApp</a></span>
+                </div>
+                <div class="contact-detail">
+                    <div class="cd-icon">📍</div>
+                    <span class="cd-text">No 10 Jinadu Ashipa Street, Fatoki Isuti Road, Igando, Lagos</span>
+                </div>
+                <div class="contact-detail">
                     <div class="cd-icon">📦</div>
                     <span class="cd-text">Delivery available across Nigeria</span>
-                </div>
-                <div class="contact-detail">
-                    <div class="cd-icon">⏱️</div>
-                    <span class="cd-text">We respond within 24 hours</span>
-                </div>
-                <div class="contact-detail">
-                    <div class="cd-icon">💳</div>
-                    <span class="cd-text">Flexible payment options available</span>
                 </div>
             </div>
             <div class="fu fu-d1">
@@ -832,6 +1073,9 @@
     <p class="footer-brand"><em>Celie</em> Tea</p>
     <p class="footer-sub">African Botanicals</p>
     <div class="footer-hr"></div>
+    <p class="footer-copy" style="margin-bottom:.5rem;">Produced by N&A Scandic Limited · NAFDAC Reg. No: A7-103118L</p>
+    <p class="footer-copy" style="margin-bottom:.5rem; color: rgba(255,255,255,.35);">⚠️ Not to be taken by pregnant women and children below 12 years.</p>
+    <p class="footer-copy" style="margin-bottom:.5rem;">No 10 Jinadu Ashipa Street, Fatoki Isuti Road, Igando, Lagos</p>
     <p class="footer-copy">© 2025 Celie Tea. All rights reserved. Healing, Naturally.</p>
 </footer>
 
@@ -854,16 +1098,111 @@
     }, { threshold: 0.12 });
     fuEls.forEach(el => io.observe(el));
 
-    // Form submit
+    // Order form submit → WhatsApp + Email
+    const WHATSAPP_NUMBER = '2348035984783';
+    const ORDER_EMAIL = 'customercare@celietea.com';
     document.getElementById('submit-btn').addEventListener('click', function () {
-        const name  = document.getElementById('fname').value.trim();
-        const phone = document.getElementById('phone').value.trim();
+        const name    = document.getElementById('fname').value.trim();
+        const phone   = document.getElementById('phone').value.trim();
+        const email   = document.getElementById('email').value.trim();
+        const enquiry = document.getElementById('enquiry').value;
+        const qty     = document.getElementById('quantity').value;
+        const addr    = document.getElementById('address').value.trim();
+        const msg     = document.getElementById('message').value.trim();
         if (!name || !phone) {
             alert('Please fill in your name and phone number to continue.');
             return;
         }
+        const qtyLabels = {'1':'1 Box — ₦13,000','2':'2 Boxes — ₦26,000','3':'3 Boxes — ₦39,000','other':'Other quantity'};
+        const enquiryLabels = {'order':'Place an Order','inquiry':'Product Inquiry','delivery':'Delivery Information','other':'Something Else'};
+        const lines = [
+            '🌿 *New Celie Tea Order* 🌿',
+            '',
+            '*Name:* ' + name,
+            '*Phone:* ' + phone,
+            '*Email:* ' + (email || '—'),
+            '*Reason:* ' + (enquiryLabels[enquiry] || '—'),
+            '*Quantity:* ' + (qtyLabels[qty] || qty),
+            '*Delivery Address:* ' + (addr || '—'),
+            '*Message:* ' + (msg || '—')
+        ];
+        const text = lines.join('\n');
+        const waUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+        const subject = 'New Celie Tea Order — ' + name;
+        const mailUrl = 'mailto:' + ORDER_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text.replace(/\*/g,''));
+
+        // Open WhatsApp in a new tab, then trigger email draft
+        window.open(waUrl, '_blank');
+        setTimeout(() => { window.location.href = mailUrl; }, 600);
+
         document.getElementById('contact-form').style.display = 'none';
         document.getElementById('form-success').style.display = 'block';
+    });
+
+    // ── REVIEWS ──────────────────────────────────────
+    const REVIEWS_KEY = 'celie_tea_reviews_v1';
+    const seedReviews = [
+        { name: 'Blessing U.', stars: 5, text: 'My energy levels have improved so much. I feel like myself again!', date: '2025-09-12' },
+        { name: 'Tunde K.', stars: 5, text: 'Bought this for my wife and we both drink it now. Great for vitality.', date: '2025-10-03' }
+    ];
+    function loadReviews() {
+        try { return JSON.parse(localStorage.getItem(REVIEWS_KEY)) || seedReviews; }
+        catch (e) { return seedReviews; }
+    }
+    function saveReviews(arr) { localStorage.setItem(REVIEWS_KEY, JSON.stringify(arr)); }
+    function escapeHtml(s){ return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+    function renderReviews() {
+        const list = loadReviews();
+        const container = document.getElementById('reviews-list');
+        if (!list.length) {
+            container.innerHTML = '<div class="reviews-empty">No reviews yet — be the first to share your story!</div>';
+            return;
+        }
+        container.innerHTML = list.slice().reverse().map(r => `
+            <div class="review-item">
+                <div class="review-head">
+                    <span class="review-name">${escapeHtml(r.name)}</span>
+                    <span class="review-stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</span>
+                </div>
+                <p class="review-text">${escapeHtml(r.text)}</p>
+                <p class="review-date" style="margin-top:.6rem;">${r.date}</p>
+            </div>
+        `).join('');
+    }
+    renderReviews();
+
+    // Star picker
+    let currentStars = 0;
+    const stars = document.querySelectorAll('#star-input span');
+    stars.forEach(s => {
+        s.addEventListener('click', () => {
+            currentStars = parseInt(s.dataset.v, 10);
+            stars.forEach(x => x.classList.toggle('active', parseInt(x.dataset.v,10) <= currentStars));
+        });
+        s.addEventListener('mouseenter', () => {
+            const v = parseInt(s.dataset.v, 10);
+            stars.forEach(x => x.classList.toggle('active', parseInt(x.dataset.v,10) <= v));
+        });
+    });
+    document.getElementById('star-input').addEventListener('mouseleave', () => {
+        stars.forEach(x => x.classList.toggle('active', parseInt(x.dataset.v,10) <= currentStars));
+    });
+
+    document.getElementById('rev-submit').addEventListener('click', () => {
+        const name = document.getElementById('rev-name').value.trim();
+        const text = document.getElementById('rev-text').value.trim();
+        if (!name || !text || !currentStars) {
+            alert('Please add your name, a rating, and a short review.');
+            return;
+        }
+        const list = loadReviews();
+        list.push({ name, stars: currentStars, text, date: new Date().toISOString().slice(0,10) });
+        saveReviews(list);
+        document.getElementById('rev-name').value = '';
+        document.getElementById('rev-text').value = '';
+        currentStars = 0;
+        stars.forEach(x => x.classList.remove('active'));
+        renderReviews();
     });
 </script>
 </body>
